@@ -6,7 +6,7 @@
 #    By: cchampda <cchampda@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/27 11:23:48 by nrandria          #+#    #+#              #
-#    Updated: 2016/06/01 14:58:28 by cchampda         ###   ########.fr        #
+#    Updated: 2016/06/02 17:51:47 by cchampda         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,8 +15,12 @@
 NAME = libft/libft.a
 
 SRC =	srcs/fdf.c				\
-		srcs/mandel.c \
-		srcs/menu.c
+		srcs/draw_frac.c \
+		srcs/draw_tool.c \
+		srcs/parse.c \
+		srcs/key.c \
+		srcs/init.c \
+		srcs/mouse.c 
 
 
 EXE = fractol
