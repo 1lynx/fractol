@@ -22,5 +22,6 @@ int			key_mouse(int key, int x, int y, t_info *e)
 			e->y1 = y_real - (y / e->zoom);
 		}
 	}
+	parse(key, e);
 	return (0);
 }

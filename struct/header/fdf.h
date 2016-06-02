@@ -6,14 +6,13 @@
 /*   By: cchampda <cchampda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/15 16:35:26 by cchampda          #+#    #+#             */
-/*   Updated: 2016/06/02 17:54:18 by cchampda         ###   ########.fr       */
+/*   Updated: 2016/06/02 19:04:54 by cchampda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FDF_H
 # define FDF_H
 # include "../libft/libft.h"
-# include "../libft/get_next_line.h"
 # include <mlx.h>
 # include <stdlib.h>
 # include <stdio.h>
@@ -21,9 +20,7 @@
 
 # define HEIGHT 1000
 # define WIDTH 1000
-# define BUF_SIZE 1000
-# define FDF_ERROR { ft_putstr("Error, invalid file"); exit(-1); }
-# define USAGE_ERROR { perror("Error"); return(-1); }
+
 
 typedef struct	s_info
 {
