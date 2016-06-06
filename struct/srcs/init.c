@@ -1,4 +1,4 @@
-#include "../header/fdf.h"
+ #include "../header/fdf.h"
 
 
 void	init_mandelbrot(t_info *e)
@@ -17,6 +17,8 @@ void	init_mandelbrot(t_info *e)
 
 void			init_julia(t_info *e)
 {
+	e->c_r = 0.285;
+	e->c_i = 0.01;
 	e->x1 = -2;
 	e->x2 = 2.5;
 	e->y1 = -1.95;

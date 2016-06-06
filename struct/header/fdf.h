@@ -6,7 +6,7 @@
 /*   By: cchampda <cchampda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/15 16:35:26 by cchampda          #+#    #+#             */
-/*   Updated: 2016/06/02 19:04:54 by cchampda         ###   ########.fr       */
+/*   Updated: 2016/06/06 17:39:56 by cchampda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@
 
 # define HEIGHT 1000
 # define WIDTH 1000
+# define USAGE_ERROR {  STR_E exit(0); }
+# define STR_E ft_putendl("Error : Usage: ./fractol fractale or -h for help\n");
 
 
 typedef struct	s_info
@@ -41,6 +43,7 @@ typedef struct	s_info
 	int			bol;
 	int			mode;
 	int			b_w;
+	double			mot_i;
 
 	double			x1;
 	double			x2;
@@ -83,6 +86,9 @@ void	draw_burning_ship(t_info *e);
 void	draw_chameleon(t_info *e);
 void	draw_tricorn(t_info *e);
 
+int		motion(int x, int y, t_info *e);
+void	choose_type(char *str, t_info *i);
+void	help(void);
 
 
 

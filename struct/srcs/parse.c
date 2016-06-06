@@ -24,7 +24,6 @@ int parse(int key, t_info *i)
 	if(i->bol == 1)
 		key_para_change(key, i);
 	draw(i);
-	mlx_put_image_to_window(i->mlx, i->win, i->mlx_img, 0, 0);
 	return(0);
 }
 
@@ -42,4 +41,5 @@ void draw(t_info *i)
 		draw_burning_ship(i);
 	if (i->mode == 5)
 		draw_tricorn(i);
+	mlx_put_image_to_window(i->mlx, i->win, i->mlx_img, 0, 0);
 }

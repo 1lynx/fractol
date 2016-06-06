@@ -19,8 +19,8 @@ void 	key_color(t_info *i, int key)
 void	key_para_change(int key, t_info *i)
 {
 	key_color(i, key);
-
-
+	if (key == 67)
+		i->motion = 1;
 	if (key == 92)
 		i->iter_max += 5;
 	if (key == 91)
@@ -30,16 +30,13 @@ void	key_para_change(int key, t_info *i)
 	if (key == 78)
 		i->zoom /= 1.2;
 	if (key == 123)
-		i->x1 += 0.01;
+		i->x1 += 0.1;
 	if (key == 124)
-		i->x1 -= 0.01;
+		i->x1 -= 0.1;
 	if (key == 126)
-		i->y1 += 0.01;
+		i->y1 += 0.1;
 	if (key == 125)
-		i->y1 -= 0.01;
-		printf("x : %f\n", i->x1);
-		printf("y : %f\n", i->y1);
-		printf("\n");
+		i->y1 -= 0.1;
 	if (key == 15)
 		i->bol = 0;
 	if (key == 45)
@@ -56,8 +53,6 @@ void	key_para_change(int key, t_info *i)
 		if(i->mode >= 6)
 			i->mode = 0;
 	}
-	printf("%d\n", i->mode);
-	printf("\n");
 	if (key == 53)
 	{
 		exit(0);

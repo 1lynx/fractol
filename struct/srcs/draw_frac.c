@@ -39,8 +39,6 @@ void			draw_julia(t_info *e)
 		e->y = 0;
 		while (e->y < e->image_y)
 		{
-			e->c_r = 0.285;
-			e->c_i = 0.01;
 			e->z_r = e->x / e->zoom + e->x1;
 			e->z_i = e->y / e->zoom + e->y1;
 			e->i = 0;
