@@ -6,7 +6,7 @@
 /*   By: cchampda <cchampda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/15 16:34:14 by cchampda          #+#    #+#             */
-/*   Updated: 2016/06/06 17:42:53 by cchampda         ###   ########.fr       */
+/*   Updated: 2016/09/08 18:45:05 by cchampda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,13 @@ void choose_type(char *av, t_info *i)
 void	init_window(t_info *i)
 {
 	i->mlx = mlx_init();
-	i->win = mlx_new_window(i->mlx, WIDTH, HEIGHT, "Window");
+	i->win = mlx_new_window(i->mlx, WIDTH, HEIGHT, "Fractal");
+	i->win_menu = mlx_new_window(i->mlx, 500, 400, "Menu");
 	i->mlx_img = mlx_new_image(i->mlx, WIDTH, HEIGHT);
 	i->ptr_img = mlx_get_data_addr(i->mlx_img, &(i->bpp), &(i->sl), &(i->ian));
 	parse(0, i);
 	mlx_hook(i->win, 2, 3, parse, i);
+	mlx_hook(i->win_menu, 2, 3, parse, i);
 	mlx_hook(i->win, 6, 1L << 6, motion, i);
 	mlx_mouse_hook(i->win, key_mouse, i);
 	mlx_loop(i->mlx);

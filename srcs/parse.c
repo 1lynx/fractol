@@ -23,6 +23,8 @@ int parse(int key, t_info *i)
 		init_base(i);
 	if(i->bol == 1)
 		key_para_change(key, i);
+	mlx_clear_window(i->mlx, i->win_menu);
+	r_menu(i);
 	draw(i);
 	return(0);
 }

@@ -6,7 +6,7 @@
 /*   By: cchampda <cchampda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/15 16:35:26 by cchampda          #+#    #+#             */
-/*   Updated: 2016/06/06 17:39:56 by cchampda         ###   ########.fr       */
+/*   Updated: 2016/09/08 18:23:31 by cchampda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,11 @@
 typedef struct	s_info
 {
 	void		*mlx;
+	void 		*win_menu;
 	void		*win;
 	void		*mlx_img;
 	char		*ptr_img;
+	char		*frac_name;
 	int			bpp;
 	int			sl;
 	int			ian;
@@ -90,6 +92,7 @@ int		motion(int x, int y, t_info *e);
 void	choose_type(char *str, t_info *i);
 void	help(void);
 
+void	r_menu(t_info *s);
 
 
 
