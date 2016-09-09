@@ -3,6 +3,7 @@
 
 void	init_mandelbrot(t_info *e)
 {
+  e->frac_name = ft_strdup("Mandelbrot");
 	e->x1 = -2.5;
 	e->x2 = 2.5;
 	e->y1 = -1.95;
@@ -17,6 +18,7 @@ void	init_mandelbrot(t_info *e)
 
 void			init_julia(t_info *e)
 {
+  e->frac_name = ft_strdup("Julia");
 	e->c_r = 0.285;
 	e->c_i = 0.01;
 	e->x1 = -2;
@@ -33,6 +35,7 @@ void			init_julia(t_info *e)
 
 void			init_sword(t_info *e)
 {
+  e->frac_name = ft_strdup("Sword");
 	e->x1 = -1.5;
 	e->x2 = 2.5;
 	e->y1 = -1.5;
@@ -47,6 +50,7 @@ void			init_sword(t_info *e)
 
 void				init_burning_ship(t_info *e)
 {
+  e->frac_name = ft_strdup("Burning Ship");
 	e->x1 = -1.83;
 	e->x2 = 2.5;
 	e->y1 = -1.87;
@@ -61,6 +65,7 @@ void				init_burning_ship(t_info *e)
 
 void			init_chameleon(t_info *e)
 {
+  e->frac_name = ft_strdup("Chameleon");
 	e->x1 = -1.46;
 	e->x2 = 2.5;
 	e->y1 = -1.43;
@@ -77,6 +82,7 @@ void			init_chameleon(t_info *e)
 
 void				init_tricorn(t_info *e)
 {
+  e->frac_name = ft_strdup("Tricorn");
 	e->x1 = -2.08;
 	e->x2 = 2.5;
 	e->y1 = -2;

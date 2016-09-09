@@ -7,8 +7,8 @@ void	r_menu(t_info *s)
 	mlx_string_put(s->mlx, s->win_menu, 15, 20, 0xFFFFFF, \
 	"|                      MENU                  |");
 	mlx_string_put(s->mlx, s->win_menu, 15, 40, 0xFFFFFF, \
-	"| MAP:");
-	mlx_string_put(s->mlx, s->win_menu, 80, 40, 0xFFFFFF, ft_itoa(s->zoom));
+	"| FRACTAL NAME:");
+	mlx_string_put(s->mlx, s->win_menu, 170, 40, 0xFFFFFF, s->frac_name);
 	mlx_string_put(s->mlx, s->win_menu, 465, 40, 0xFFFFFF, "|");
 	mlx_string_put(s->mlx, s->win_menu, 15, 60, 0xFFFFFF, \
 	"| MOVE : Arrows                              |");

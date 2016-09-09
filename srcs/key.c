@@ -18,6 +18,7 @@ void 	key_color(t_info *i, int key)
 }
 void	key_para_change(int key, t_info *i)
 {
+	printf("%d\n", key);
 	key_color(i, key);
 	if (key == 67)
 		i->motion = 1;

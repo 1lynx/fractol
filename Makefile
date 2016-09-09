@@ -20,7 +20,7 @@ LIB = libft/libft.a
 
 FLAG = -Wall -Wextra -Werror
 
-LIBGRPH = -lmlx -framework OpenGL -framework Appkit -O3 -Ofast
+LIBGRPH = -I /usr/X11/include -g -L/usr/X11/lib -lX11 -lXext -lmlx -framework OpenGL -framework Appkit -O3 -Ofast
 
 INC = header/fdf.h
 
@@ -38,6 +38,7 @@ all: $(NAME)
 
 $(NAME): $(LIB) $(OBJ)
 		@$(CC) $(FLAG) $(OBJ) $(LIB) -o $(NAME) $(LIBGRPH)
+		@rm -f $(OBJ)
 
 $(LIB):
 		@echo "\033[33mLibft compilation\033[0m"

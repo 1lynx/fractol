@@ -31,7 +31,11 @@ void choose_type(char *av, t_info *i)
 		help();
 		exit(0);
 	}
-
+	else
+	{
+		ft_putstr("No fractal founded, use -h to see fractals");
+		exit(0);
+	}
 }
 
 void	init_window(t_info *i)
