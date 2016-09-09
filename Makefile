@@ -72,4 +72,4 @@ gpush:
 		@echo "\033[33m.Commiting Files on Git\033[0m"
 		@git commit -m "`date +%d/%m-%Hh%M`"
 		@echo "\033[33m.Pushing Files on Git\033[0m"
-		@git push
+		@git push origin master
