@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   mouse.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cchampda <cchampda@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/09/13 15:28:19 by cchampda          #+#    #+#             */
+/*   Updated: 2016/09/13 15:39:00 by cchampda         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../header/fdf.h"
 
 int			key_mouse(int key, int x, int y, t_info *e)
@@ -26,7 +38,7 @@ int			key_mouse(int key, int x, int y, t_info *e)
 	return (0);
 }
 
-int					motion(int x, int y, t_info *e)
+int			motion(int x, int y, t_info *e)
 {
 	if(e->motion > 0)
 	{
@@ -40,7 +52,7 @@ int					motion(int x, int y, t_info *e)
 	return (0);
 }
 
-void				help(void)
+void		help(void)
 {
 	ft_putendl("Usage : ./fractol fractale");
 	ft_putendl("fractales : ");

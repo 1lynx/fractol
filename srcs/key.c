@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   key.c                                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cchampda <cchampda@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/09/13 15:28:14 by cchampda          #+#    #+#             */
+/*   Updated: 2016/09/13 15:37:50 by cchampda         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../header/fdf.h"
 
-void 	key_color(t_info *i, int key)
+void	key_color(t_info *i, int key)
 {
 	if (key == 86)
 		i->red += 20;
@@ -14,14 +26,19 @@ void 	key_color(t_info *i, int key)
 		i->blue += 20;
 	if (key == 85)
 		i->blue -= 20;
-
 }
+
 void	key_para_change(int key, t_info *i)
 {
 	printf("%d\n", key);
 	key_color(i, key);
 	if (key == 67)
-		i->motion = 1;
+	{
+		if (i->motion == 1)
+			i->motion = 0;
+		else
+			i->motion = 1;
+	}
 	if (key == 92)
 		i->iter_max += 5;
 	if (key == 91)
@@ -40,18 +57,11 @@ void	key_para_change(int key, t_info *i)
 		i->y1 -= 0.1;
 	if (key == 15)
 		i->bol = 0;
-	if (key == 45)
-	{
-		if(i->b_w == 1)
-			i->b_w = 0;
-		else
-			i->b_w = 1;
-	}
-	if (key == 46)
+	if (key == 82)
 	{
 		init_base(i);
 		i->mode += 1;
-		if(i->mode >= 6)
+		if (i->mode >= 6)
 			i->mode = 0;
 	}
 	if (key == 53)
@@ -60,5 +70,4 @@ void	key_para_change(int key, t_info *i)
 		mlx_destroy_image(i->mlx, i->ptr_img);
 		mlx_destroy_window(i->mlx, i->win);
 	}
-
 }

@@ -6,7 +6,7 @@
 #    By: cchampda <cchampda@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/09/06 19:57:23 by cchampda          #+#    #+#              #
-#    Updated: 2016/09/08 18:23:13 by cchampda         ###   ########.fr        #
+#    Updated: 2016/09/13 14:35:43 by cchampda         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ LIB = libft/libft.a
 
 FLAG = -Wall -Wextra -Werror
 
-LIBGRPH = -I /usr/X11/include -g -L/usr/X11/lib -lX11 -lXext -lmlx -framework OpenGL -framework Appkit -O3 -Ofast
+LIBGRPH = -lmlx -framework OpenGL -framework Appkit -O3 -Ofast
 
 INC = header/fdf.h
 
@@ -72,4 +72,4 @@ gpush:
 		@echo "\033[33m.Commiting Files on Git\033[0m"
 		@git commit -m "`date +%d/%m-%Hh%M`"
 		@echo "\033[33m.Pushing Files on Git\033[0m"
-		@git push origin master
+		@git push

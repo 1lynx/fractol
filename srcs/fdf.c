@@ -6,13 +6,13 @@
 /*   By: cchampda <cchampda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/15 16:34:14 by cchampda          #+#    #+#             */
-/*   Updated: 2016/09/08 18:45:05 by cchampda         ###   ########.fr       */
+/*   Updated: 2016/09/13 15:33:58 by cchampda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/fdf.h"
 
-void choose_type(char *av, t_info *i)
+void	choose_type(char *av, t_info *i)
 {
 	if (ft_strcmp("mandelbrot", av) == 0)
 		i->mode = 0;
@@ -42,7 +42,7 @@ void	init_window(t_info *i)
 {
 	i->mlx = mlx_init();
 	i->win = mlx_new_window(i->mlx, WIDTH, HEIGHT, "Fractal");
-	i->win_menu = mlx_new_window(i->mlx, 500, 400, "Menu");
+	i->win_menu = mlx_new_window(i->mlx, 490, 290, "Menu");
 	i->mlx_img = mlx_new_image(i->mlx, WIDTH, HEIGHT);
 	i->ptr_img = mlx_get_data_addr(i->mlx_img, &(i->bpp), &(i->sl), &(i->ian));
 	parse(0, i);
@@ -67,5 +67,5 @@ int		main(int ac, char **av)
 	{
 		USAGE_ERROR;
 	}
-	return(0);
+	return (0);
 }

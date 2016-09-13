@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   draw_frac.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cchampda <cchampda@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/09/13 15:27:42 by cchampda          #+#    #+#             */
+/*   Updated: 2016/09/13 15:30:14 by cchampda         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../header/fdf.h"
 
-void				draw_mandelbrot(t_info *e)
+void			draw_mandelbrot(t_info *e)
 {
 	e->image_x = HEIGHT;
 	e->image_y = WIDTH;
@@ -85,7 +97,7 @@ void			draw_sword(t_info *e)
 	}
 }
 
-void				draw_burning_ship(t_info *e)
+void			draw_burning_ship(t_info *e)
 {
 	e->image_x = HEIGHT;
 	e->image_y = WIDTH;
@@ -143,7 +155,7 @@ void			draw_chameleon(t_info *e)
 	}
 }
 
-void				draw_tricorn(t_info *e)
+void			draw_tricorn(t_info *e)
 {
 	e->image_x = HEIGHT;
 	e->image_y = WIDTH;
