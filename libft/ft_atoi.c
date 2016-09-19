@@ -3,38 +3,37 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nrandria <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: cchampda <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/23 14:44:40 by nrandria          #+#    #+#             */
-/*   Updated: 2015/11/30 16:38:49 by nrandria         ###   ########.fr       */
+/*   Created: 2015/11/29 14:13:06 by cchampda          #+#    #+#             */
+/*   Updated: 2015/11/29 14:13:23 by cchampda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(const char *str)
-{
-	int i;
-	int neg;
-	int res;
+#include "libft.h"
 
-	i = 0;
-	neg = 0;
-	res = 0;
-	while (str[i] == '\t' || str[i] == '\n' || str[i] == ' ' || str[i] == '\r'
-			|| str[i] == '\f' || str[i] == '\v')
-		i++;
-	if (str[i] == '+')
-		i++;
-	else if (str[i] == '-')
+int		ft_atoi(const char *str)
+{
+	int		total;
+	int		sign;
+
+	sign = 1;
+	total = 0;
+	while (*str == ' ' || *str == '\t' || *str == '\r' || *str == '\f'
+			|| *str == '\v' || *str == '\n')
+		str++;
+	if (*str == '-')
 	{
-		neg = 1;
-		i++;
+		sign = -1;
+		str++;
 	}
-	while (str[i] >= 48 && str[i] <= 57)
+	else if (*str == '+')
+		str++;
+	while (*str >= '0' && *str <= '9')
 	{
-		res = res * 10 + str[i] - '0';
-		i++;
+		total = (total * 10) + (*str - '0');
+		str++;
 	}
-	if (neg == 1)
-		return (res *= -1);
-	return (res);
+	total = total * sign;
+	return (total);
 }

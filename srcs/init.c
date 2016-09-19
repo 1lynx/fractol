@@ -6,7 +6,7 @@
 /*   By: cchampda <cchampda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/13 15:28:09 by cchampda          #+#    #+#             */
-/*   Updated: 2016/09/13 15:45:19 by cchampda         ###   ########.fr       */
+/*   Updated: 2016/09/19 18:51:58 by cchampda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void			init_mandelbrot(t_info *e)
 	e->x2 = 2.5;
 	e->y1 = -1.95;
 	e->y2 = 3;
-	e->zoom = 259;
+	e->zoom = 200;
 	e->iter_max = 85;
 	e->blue = 255;
 	e->green = 255;

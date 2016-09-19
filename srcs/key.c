@@ -6,7 +6,7 @@
 /*   By: cchampda <cchampda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/13 15:28:14 by cchampda          #+#    #+#             */
-/*   Updated: 2016/09/13 15:37:50 by cchampda         ###   ########.fr       */
+/*   Updated: 2016/09/19 18:42:21 by cchampda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ void	key_color(t_info *i, int key)
 
 void	key_para_change(int key, t_info *i)
 {
-	printf("%d\n", key);
 	key_color(i, key);
+	key_snd_change(key, i);
 	if (key == 67)
 	{
 		if (i->motion == 1)
@@ -39,6 +39,23 @@ void	key_para_change(int key, t_info *i)
 		else
 			i->motion = 1;
 	}
+	if (key == 82)
+	{
+		init_base(i);
+		i->mode += 1;
+		if (i->mode >= 6)
+			i->mode = 0;
+	}
+	if (key == 53)
+	{
+		exit(0);
+		mlx_destroy_image(i->mlx, i->ptr_img);
+		mlx_destroy_window(i->mlx, i->win);
+	}
+}
+
+void	key_snd_change(int key, t_info *i)
+{
 	if (key == 92)
 		i->iter_max += 5;
 	if (key == 91)
@@ -57,17 +74,4 @@ void	key_para_change(int key, t_info *i)
 		i->y1 -= 0.1;
 	if (key == 15)
 		i->bol = 0;
-	if (key == 82)
-	{
-		init_base(i);
-		i->mode += 1;
-		if (i->mode >= 6)
-			i->mode = 0;
-	}
-	if (key == 53)
-	{
-		exit(0);
-		mlx_destroy_image(i->mlx, i->ptr_img);
-		mlx_destroy_window(i->mlx, i->win);
-	}
 }

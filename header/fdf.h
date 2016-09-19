@@ -6,7 +6,7 @@
 /*   By: cchampda <cchampda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/15 16:35:26 by cchampda          #+#    #+#             */
-/*   Updated: 2016/09/13 15:43:44 by cchampda         ###   ########.fr       */
+/*   Updated: 2016/09/19 18:44:29 by cchampda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 # include <stdio.h>
 # include <math.h>
 
-# define HEIGHT 1000
-# define WIDTH 1000
+# define HEIGHT 700
+# define WIDTH 700
 # define USAGE_ERROR {  STR_E exit(0); }
 # define STR_E ft_putendl("Error : Usage: ./fractol fractale or -h for help\n");
 
@@ -89,4 +89,6 @@ void			choose_type(char *str, t_info *i);
 void			help(void);
 void			r_menu(t_info *s);
 void			color_menu(t_info *s);
+void			key_snd_change(int key, t_info *i);
+
 #endif

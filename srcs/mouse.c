@@ -6,7 +6,7 @@
 /*   By: cchampda <cchampda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/13 15:28:19 by cchampda          #+#    #+#             */
-/*   Updated: 2016/09/13 15:39:00 by cchampda         ###   ########.fr       */
+/*   Updated: 2016/09/19 18:47:11 by cchampda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int			key_mouse(int key, int x, int y, t_info *e)
 
 int			motion(int x, int y, t_info *e)
 {
-	if(e->motion > 0)
+	if (e->motion > 0)
 	{
 		if (x > 0 && x <= WIDTH && y > 0 && y <= HEIGHT)
 		{

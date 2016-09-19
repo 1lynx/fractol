@@ -3,29 +3,31 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nrandria <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: cchampda <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/25 16:18:43 by nrandria          #+#    #+#             */
-/*   Updated: 2015/11/30 19:19:35 by nrandria         ###   ########.fr       */
+/*   Created: 2015/11/29 14:16:17 by cchampda          #+#    #+#             */
+/*   Updated: 2015/11/29 14:16:24 by cchampda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+int	ft_memcmp(const void *str, const void *str2, size_t n)
 {
-	unsigned char	*tmp1;
-	unsigned char	*tmp2;
-	size_t			i;
+	unsigned char	*cast_str;
+	unsigned char	*cast_str2;
+	int				i;
 
-	tmp1 = (unsigned char *)s1;
-	tmp2 = (unsigned char *)s2;
 	i = 0;
-	if (n == 0)
+	cast_str = (unsigned char *)str;
+	cast_str2 = (unsigned char *)str2;
+	if (!str && !str2 && !n)
 		return (0);
-	while (tmp1[i] == tmp2[i] && i < n)
+	while (n--)
+	{
+		if (cast_str[i] != cast_str2[i])
+			return (cast_str[i] - cast_str2[i]);
 		i++;
-	if (i == n)
-		return (0);
-	return (tmp1[i] - tmp2[i]);
+	}
+	return (0);
 }
