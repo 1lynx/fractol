@@ -6,7 +6,7 @@
 /*   By: cchampda <cchampda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/13 15:28:09 by cchampda          #+#    #+#             */
-/*   Updated: 2016/09/19 18:51:58 by cchampda         ###   ########.fr       */
+/*   Updated: 2016/09/21 15:54:46 by cchampda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 void			init_mandelbrot(t_info *e)
 {
 	e->frac_name = ft_strdup("Mandelbrot");
-	e->x1 = -2.5;
+	e->x1 = -2.4;
 	e->x2 = 2.5;
-	e->y1 = -1.95;
+	e->y1 = -1.75;
 	e->y2 = 3;
 	e->zoom = 200;
 	e->iter_max = 85;
@@ -32,11 +32,11 @@ void			init_julia(t_info *e)
 	e->frac_name = ft_strdup("Julia");
 	e->c_r = 0.285;
 	e->c_i = 0.01;
-	e->x1 = -2;
+	e->x1 = -2.1;
 	e->x2 = 2.5;
-	e->y1 = -1.95;
+	e->y1 = -2.05;
 	e->y2 = 3;
-	e->zoom = 345.23;
+	e->zoom = 166;
 	e->iter_max = 85;
 	e->red = 255;
 	e->green = 255;
@@ -47,11 +47,11 @@ void			init_julia(t_info *e)
 void			init_sword(t_info *e)
 {
 	e->frac_name = ft_strdup("Sword");
-	e->x1 = -1.5;
+	e->x1 = -2.1;
 	e->x2 = 2.5;
-	e->y1 = -1.5;
+	e->y1 = -2.1;
 	e->y2 = 3;
-	e->zoom = 345.23;
+	e->zoom = 166;
 	e->iter_max = 85;
 	e->red = 255;
 	e->green = 255;
@@ -77,13 +77,13 @@ void			init_burning_ship(t_info *e)
 void			init_chameleon(t_info *e)
 {
 	e->frac_name = ft_strdup("Chameleon");
-	e->x1 = -1.46;
+	e->x1 = -2.1;
 	e->x2 = 2.5;
-	e->y1 = -1.43;
+	e->y1 = -2.0;
 	e->y2 = 3;
 	e->c_r = 0.285;
 	e->c_i = 0.01;
-	e->zoom = 345.23;
+	e->zoom = 166;
 	e->iter_max = 85;
 	e->red = 255;
 	e->green = 255;

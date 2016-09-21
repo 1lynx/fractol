@@ -3,30 +3,31 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cchampda <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: nrandria <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/29 14:15:56 by cchampda          #+#    #+#             */
-/*   Updated: 2015/11/29 14:16:04 by cchampda         ###   ########.fr       */
+/*   Created: 2015/11/24 14:39:14 by nrandria          #+#    #+#             */
+/*   Updated: 2016/02/02 18:06:23 by nrandria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
+void				*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
-	unsigned int	i;
-	unsigned char	*cast_dst;
-	unsigned char	*cast_src;
-	unsigned char	cast_c;
+	size_t			i;
+	unsigned char	*tmp;
+	unsigned char	*tmp2;
+	unsigned char	uc;
 
-	cast_dst = (unsigned char*)dst;
-	cast_src = (unsigned char*)src;
-	cast_c = (unsigned char)c;
 	i = 0;
+	tmp = (unsigned char *)dst;
+	tmp2 = (unsigned char *)src;
+	uc = (unsigned char)c;
 	while (i < n)
 	{
-		if ((*cast_dst++ = *cast_src++) == cast_c)
-			return (cast_dst);
+		tmp[i] = tmp2[i];
+		if (tmp2[i] == uc)
+			return (tmp + i + 1);
 		i++;
 	}
 	return (NULL);

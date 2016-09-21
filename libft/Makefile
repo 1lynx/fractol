@@ -3,13 +3,12 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: cchampda <cchampda@student.42.fr>          +#+  +:+       +#+         #
+#    By: nrandria <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2015/12/01 12:55:53 by cchampda          #+#    #+#              #
-#    Updated: 2016/09/19 18:09:46 by cchampda         ###   ########.fr        #
+#    Created: 2015/11/27 11:23:48 by nrandria          #+#    #+#              #
+#    Updated: 2016/02/22 16:03:31 by nrandria         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-
 
 .PHONY: all, fclean, clean, re
 
@@ -25,25 +24,39 @@ SRC = ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
 	  ft_strlen.c ft_strmap.c ft_strmapi.c ft_strncat.c ft_strncmp.c \
 	  ft_strncpy.c ft_strnequ.c ft_strnew.c ft_strnstr.c ft_strrchr.c \
 	  ft_strstr.c ft_strsub.c ft_strtrim.c ft_tolower.c ft_toupper.c \
-	  ft_strsplit.c ft_itoa.c ft_lstadd.c ft_lstdel.c ft_lstdelone.c \
-	  ft_lstiter.c ft_lstmap.c ft_lstnew.c ft_strnjoin.c ft_strndup.c\
+	  ft_strsplit.c ft_itoa.c ft_lstnew.c ft_lstdelone.c ft_lstdel.c \
+	  ft_lstadd.c ft_lstiter.c ft_lstmap.c alpha_mirror.c do_op.c print_bits.c get_next_line.c\
+	  ft_push_back.c ft_push_front.c ft_create_elem.c\
 
 OBJ = $(SRC:.c=.o)
 
-GCC = gcc -c -Wall -Wextra -Werror -Iincludes
+GCC = gcc -Wall -Wextra -Werror
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
-	@ar rc $(NAME) $(OBJ)
-
-%.o: %.c
-	@$(GCC) -c $<
+$(NAME):
+		@echo "\033[33m----------------------------------\033[0m"
+		@echo "\033[36mCompiling in .o\033[0m"
+		@$(GCC) -c $(SRC) $(HEAD)
+		@echo "\033[36mCreating library\033[0m"
+		@ar rc $(NAME) $(OBJ)
+		@echo "\033[36mIncrease the search speed\033[0m"
+		@ranlib $(NAME)
+		@echo "\033[32mLibrary Created\033[0m"
+		@echo "\033[33m----------------------------------\033[0m"
 
 clean:
+	@echo "\033[33m----------------------------------\033[0m"
+	@echo "\033[31mDeleting all .o\033[31m"
 	@rm -rf $(OBJ)
+	@echo "\033[32mThe folder is clean !\033[32m"
+	@echo "\033[33m----------------------------------\033[0m"
 
-fclean: clean
-	@rm -rf $(NAME)
+fclean:
+	@echo "\033[33m----------------------------------\033[0m"
+	@echo "\033[31mDeleting Library.a and all .o\033[31m"
+	@rm -rf $(NAME) $(OBJ)
+	@echo "\033[32mThe folder is clean\033[32m"
+	@echo "\033[33m----------------------------------\033[0m"
 
 re: fclean all

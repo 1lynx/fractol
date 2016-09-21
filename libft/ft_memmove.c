@@ -3,35 +3,33 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cchampda <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: nrandria <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/29 14:16:53 by cchampda          #+#    #+#             */
-/*   Updated: 2015/12/14 15:43:55 by cchampda         ###   ########.fr       */
+/*   Created: 2015/11/24 16:20:10 by nrandria          #+#    #+#             */
+/*   Updated: 2016/02/02 18:32:51 by nrandria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, void const *src, size_t n)
+void				*ft_memmove(void *dst, const void *src, size_t len)
 {
-	char		*cst_dst;
-	const char	*cst_src;
+	char			*tmp_dst;
+	const char		*tmp2_src;
 
-	cst_dst = dst;
-	cst_src = src;
-	if (n <= 0)
+	tmp_dst = dst;
+	tmp2_src = src;
+	if (len <= 0)
 		return (dst);
-	if (cst_dst < cst_src)
-		while (n-- > 0)
-			*cst_dst++ = *cst_src++;
+	if (tmp_dst < tmp2_src)
+		while (len-- > 0)
+			*tmp_dst++ = *tmp2_src++;
 	else
 	{
-		cst_dst += n;
-		cst_src += n;
-		while (n-- > 0)
-		{
-			*--cst_dst = *--cst_src;
-		}
+		tmp_dst += len;
+		tmp2_src += len;
+		while (len-- > 0)
+			*--tmp_dst = *--tmp2_src;
 	}
 	return (dst);
 }

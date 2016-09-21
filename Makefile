@@ -6,7 +6,7 @@
 #    By: cchampda <cchampda@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/09/06 19:57:23 by cchampda          #+#    #+#              #
-#    Updated: 2016/09/13 14:35:43 by cchampda         ###   ########.fr        #
+#    Updated: 2016/09/21 16:46:41 by cchampda         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,7 +38,6 @@ all: $(NAME)
 
 $(NAME): $(LIB) $(OBJ)
 		@$(CC) $(FLAG) $(OBJ) $(LIB) -o $(NAME) $(LIBGRPH)
-		@rm -f $(OBJ)
 
 $(LIB):
 		@echo "\033[33mLibft compilation\033[0m"

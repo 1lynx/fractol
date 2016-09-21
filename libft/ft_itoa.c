@@ -3,41 +3,41 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cchampda <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: nrandria <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/29 14:15:18 by cchampda          #+#    #+#             */
-/*   Updated: 2015/11/29 14:15:26 by cchampda         ###   ########.fr       */
+/*   Created: 2015/11/27 14:51:54 by nrandria          #+#    #+#             */
+/*   Updated: 2016/02/02 19:06:38 by nrandria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void	itoa_isnegative(int *n, int *negative)
+static void		itoa_is_neg(int *n, int *neg)
 {
 	if (*n < 0)
 	{
 		*n *= -1;
-		*negative = 1;
+		*neg = 1;
 	}
 }
 
-char		*ft_itoa(int n)
+char			*ft_itoa(int n)
 {
-	int		tmpn;
-	int		len;
-	int		negative;
-	char	*str;
+	int			tmp_n;
+	int			len;
+	int			neg;
+	char		*str;
 
 	if (n == -2147483648)
 		return (ft_strdup("-2147483648"));
-	tmpn = n;
+	tmp_n = n;
 	len = 2;
-	negative = 0;
-	itoa_isnegative(&n, &negative);
-	while (tmpn /= 10)
+	neg = 0;
+	itoa_is_neg(&n, &neg);
+	while (tmp_n /= 10)
 		len++;
-	len += negative;
-	if ((str = (char*)malloc(sizeof(char) * len)) == NULL)
+	len += neg;
+	if (!(str = (char *)malloc(sizeof(char) * len)))
 		return (NULL);
 	str[--len] = '\0';
 	while (len--)
@@ -45,7 +45,7 @@ char		*ft_itoa(int n)
 		str[len] = n % 10 + '0';
 		n = n / 10;
 	}
-	if (negative)
+	if (neg)
 		str[0] = '-';
 	return (str);
 }

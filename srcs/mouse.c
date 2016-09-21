@@ -6,7 +6,7 @@
 /*   By: cchampda <cchampda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/13 15:28:19 by cchampda          #+#    #+#             */
-/*   Updated: 2016/09/19 18:47:11 by cchampda         ###   ########.fr       */
+/*   Updated: 2016/09/21 16:31:42 by cchampda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,9 +58,8 @@ void		help(void)
 	ft_putendl("fractales : ");
 	ft_putendl("1. mandelbrot");
 	ft_putendl("2. julia");
-	ft_putendl("3. tricorn");
-	ft_putendl("4. burning");
-	ft_putendl("5. mandel1");
-	ft_putendl("6. julia1");
-	ft_putendl("7. julia2");
+	ft_putendl("3. sword");
+	ft_putendl("4. chameleon");
+	ft_putendl("5. burning_ship");
+	ft_putendl("6. tricorn");
 }

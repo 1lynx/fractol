@@ -6,7 +6,7 @@
 /*   By: cchampda <cchampda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/13 15:28:22 by cchampda          #+#    #+#             */
-/*   Updated: 2016/09/19 18:52:38 by cchampda         ###   ########.fr       */
+/*   Updated: 2016/09/21 15:33:19 by cchampda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,8 @@ int		parse(int key, t_info *i)
 	if (i->bol == 1)
 		key_para_change(key, i);
 	mlx_clear_window(i->mlx, i->win_menu);
-	r_menu(i);
 	draw(i);
+	r_menu(i);
 	return (0);
 }
 

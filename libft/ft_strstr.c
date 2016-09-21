@@ -3,47 +3,36 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cchampda <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: nrandria <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/29 14:22:12 by cchampda          #+#    #+#             */
-/*   Updated: 2015/11/29 14:22:16 by cchampda         ###   ########.fr       */
+/*   Created: 2015/11/23 16:54:04 by nrandria          #+#    #+#             */
+/*   Updated: 2015/12/01 19:22:05 by nrandria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_str_part(const char *s1, const char *s2, int i)
+char	*ft_strstr(const char *s1, const char *s2)
 {
-	int		k;
-	int		j;
-
-	k = i;
-	j = 0;
-	while (s2[j] == s1[k] && s1[k] != '\0' && s2[j] != '\0')
-	{
-		k++;
-		j++;
-		if (s2[j] == '\0')
-			return (1);
-	}
-	return (0);
-}
-
-char		*ft_strstr(const char *s1, const char *s2)
-{
-	int		i;
+	int i;
+	int j;
+	int k;
 
 	i = 0;
-	if (s2[0] == '\0')
-		return ((char *)s1);
-	while (s1[i] != '\0')
+	if (ft_strlen(s2) == 0)
+		return (char *)(s1);
+	while (s1[i])
 	{
-		if (s2[0] == s1[i])
+		j = i;
+		k = 0;
+		while (s2[k] == s1[j])
 		{
-			if (ft_str_part(s1, s2, i) == 1)
-				return ((char *)s1 + i);
+			j++;
+			k++;
+			if (s2[k] == '\0')
+				return (char *)(s1 + i);
 		}
 		i++;
 	}
-	return (0);
+	return (NULL);
 }

@@ -6,7 +6,7 @@
 /*   By: cchampda <cchampda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/13 15:28:00 by cchampda          #+#    #+#             */
-/*   Updated: 2016/09/19 18:45:48 by cchampda         ###   ########.fr       */
+/*   Updated: 2016/09/21 15:45:59 by cchampda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,9 @@ void		put_pixel_to_image(t_info *i)
 void		init_tricorn(t_info *e)
 {
 	e->frac_name = ft_strdup("Tricorn");
-	e->x1 = -2.08;
+	e->x1 = -1.68;
 	e->x2 = 2.5;
-	e->y1 = -2;
+	e->y1 = -1.4;
 	e->y2 = 3;
 	e->zoom = 259.37;
 	e->iter_max = 85;

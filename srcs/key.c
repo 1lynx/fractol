@@ -6,7 +6,7 @@
 /*   By: cchampda <cchampda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/13 15:28:14 by cchampda          #+#    #+#             */
-/*   Updated: 2016/09/19 18:42:21 by cchampda         ###   ########.fr       */
+/*   Updated: 2016/09/21 16:28:23 by cchampda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,11 @@ void	key_para_change(int key, t_info *i)
 	}
 	if (key == 82)
 	{
-		init_base(i);
-		i->mode += 1;
-		if (i->mode >= 6)
+		if (i->mode <= 5)
+			i->mode += 1;
+		if (i->mode == 6)
 			i->mode = 0;
+		init_base(i);
 	}
 	if (key == 53)
 	{
