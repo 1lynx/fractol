@@ -6,7 +6,7 @@
 /*   By: cchampda <cchampda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/13 15:28:22 by cchampda          #+#    #+#             */
-/*   Updated: 2016/09/21 15:33:19 by cchampda         ###   ########.fr       */
+/*   Updated: 2016/09/21 16:59:19 by cchampda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 void	init_base(t_info *i)
 {
-	printf("%d\n", i->mode);
 	if (i->mode == 0)
 		init_mandelbrot(i);
 	if (i->mode == 1)
