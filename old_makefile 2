@@ -1,2 +1,0 @@
-
-		-I /usr/X11/include -g -L/usr/X11/lib -lX11 -lXext -lmlx -framework OpenGL -framework Appkit -O3 -Ofast
